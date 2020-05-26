@@ -27,7 +27,7 @@
 #include <winpr/string.h>
 
 #include "synch.h"
-#include <pthread.h>
+//#include <pthread.h>
 #ifndef _WIN32
 
 #include <errno.h>
@@ -36,7 +36,7 @@
 
 #include "../log.h"
 #define TAG WINPR_TAG("sync.mutex")
-//#define PTHREAD_MUTEX_RECURSIVE 2
+#define PTHREAD_MUTEX_RECURSIVE 2
 static BOOL MutexCloseHandle(HANDLE handle);
 
 static BOOL MutexIsHandled(HANDLE handle)
