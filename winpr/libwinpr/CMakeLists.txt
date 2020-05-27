@@ -77,6 +77,12 @@ macro (winpr_definition_add)
      set (WINPR_DEFINITIONS ${WINPR_DEFINITIONS} PARENT_SCOPE)
 endmacro()
 
+if(CMAKE_COMPILER_IS_GNUCXX AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    #  older systems
+    # (pre POSIX.1-2008: glibc 2.11 and earlier).
+    add_definitions(-D_GNU_SOURCE)
+endif()
+
 set(CMAKE_REQUIRED_LIBRARIES rt)
 check_function_exists(timer_create TIMER_CREATE)
 check_function_exists(timer_delete TIMER_DELETE)

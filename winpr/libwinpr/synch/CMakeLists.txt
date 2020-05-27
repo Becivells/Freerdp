@@ -27,11 +27,6 @@ winpr_module_add(
 	synch.h
 	timer.c
 	wait.c)
-if(CMAKE_COMPILER_IS_GNUCXX AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
-	#older systems
-	# (pre POSIX.1-2008: glibc 2.11 and earlier).
-	add_definitions(-D_GNU_SOURCE)
-endif()
 if(FREEBSD)
 	winpr_include_directory_add(${EPOLLSHIM_INCLUDE_DIR})
 	winpr_library_add_private(${EPOLLSHIM_LIBS})
