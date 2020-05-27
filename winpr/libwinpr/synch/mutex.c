@@ -36,7 +36,6 @@
 
 #include "../log.h"
 #define TAG WINPR_TAG("sync.mutex")
-#define PTHREAD_MUTEX_RECURSIVE 2
 static BOOL MutexCloseHandle(HANDLE handle);
 
 static BOOL MutexIsHandled(HANDLE handle)
